@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
       hyperv.cpus = 2
     end
     manager.vm.box = "generic/debian9"
-    manager.vm.box_version = "1.9.34"
+    #manager.vm.box_version = "1.9.34"
     manager.vm.hostname = "manager"
     manager.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.150"
     manager.vm.provision "shell", inline: $script_debian
