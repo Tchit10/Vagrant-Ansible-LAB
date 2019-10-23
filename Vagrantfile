@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   #config.vm.define "manager" do |manager|
     #manager.vm.provider :hyperv do |hyperv|
       #hyperv.vmname = "manager"
-      #hyperv.memory = 2048
+      #hyperv.memory = 1024
       #hyperv.cpus = 2
     #end
     #manager.vm.box = "generic/debian9"
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "http1" do |http1|
     http1.vm.provider :hyperv do |hyperv|
       hyperv.vmname = "http1"
-      hyperv.memory = 2048
+      hyperv.memory = 1024
       hyperv.cpus = 1
     end
     http1.vm.box = "centos/7"
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "bdd1" do |bdd1|
     bdd1.vm.provider :hyperv do |hyperv|
       hyperv.vmname = "bdd1"
-      hyperv.memory = 2048
+      hyperv.memory = 1024
       hyperv.cpus = 1
     end
     bdd1.vm.box = "centos/7"
