@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     #end
     #manager.vm.box = "generic/debian9"
     #manager.vm.hostname = "manager"
-    #manager.vm.network "private_network", bridge: "Swisscom"
+    #manager.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.150"
     #manager.vm.provision "shell", inline: $script_debian
   #end
   
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
     end
     http1.vm.box = "centos/7"
     http1.vm.hostname = "http1"
-    http1.vm.network "private_network", bridge: "Swisscom"
+    http1.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.151"
     http1.vm.provision "shell", inline: $script_centos
   end
   
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
     end
     bdd1.vm.box = "centos/7"
     bdd1.vm.hostname = "bdd1"
-    bdd1.vm.network "private_network", bridge: "Swisscom"
+    bdd1.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.152"
     bdd1.vm.provision "shell", inline: $script_centos
   end
 
