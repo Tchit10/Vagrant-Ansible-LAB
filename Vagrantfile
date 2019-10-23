@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     manager.vm.provider :hyperv do |hyperv|
       hyperv.vmname = "manager"
       hyperv.memory = 1024
-      hyperv.cpus = 2
+      hyperv.cpus = 1
     end
     manager.vm.box = "roboxes/debian9"
     #manager.vm.box_version = "1.9.34"
