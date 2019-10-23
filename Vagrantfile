@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       hyperv.memory = 2048
       hyperv.cpus = 2
     end
-    manager.vm.box = "debian/9"
+    manager.vm.box = "generic/debian9"
     manager.vm.hostname = "manager"
     manager.vm.network "private_network", bridge: "Swisscom"
     manager.vm.provision "shell", inline: $script_debian
