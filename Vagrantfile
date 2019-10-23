@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
       hyperv.vmname = "manager"
       hyperv.memory = 2048
       hyperv.cpus = 2
+      hyperv.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
     manager.vm.box = "generic/debian9"
     manager.vm.hostname = "manager"
