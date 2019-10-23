@@ -10,38 +10,38 @@ Vagrant.configure("2") do |config|
   
   config.vm.define "node-manager" do |node-manager|
   node-manager.vm.provider :hyperv do |hyperv|
-	  hyperv.vmname = "node-manager"
-	  hyperv.memory = 2048
-	  hyperv.cpus = 2
-	end
-	node-manager.vm.box = "debian/9"
-	node-manager.vm.hostname = "node-manager"
-	node-manager.vm.network "private_network", bridge: "Swisscom"
-	node-manager.vm.provision "shell", inline: $script_debian
+      hyperv.vmname = "node-manager"
+      hyperv.memory = 2048
+      hyperv.cpus = 2
+  end
+  node-manager.vm.box = "debian/9"
+  node-manager.vm.hostname = "node-manager"
+  node-manager.vm.network "private_network", bridge: "Swisscom"
+  node-manager.vm.provision "shell", inline: $script_debian
   end
   
   config.vm.define "http1" do |http1|
   http1.vm.provider :hyperv do |hyperv|
-	  hyperv.vmname = "http1"
-	  hyperv.memory = 2048
-	  hyperv.cpus = 1
-	end
-	http1.vm.box = "centos/7"
-	http1.vm.hostname = "http1"
-	http1.vm.network "private_network", bridge: "Swisscom"
-	http1.vm.provision "shell", inline: $script_centos
+    hyperv.vmname = "http1"
+    hyperv.memory = 2048
+    hyperv.cpus = 1
+  end
+  http1.vm.box = "centos/7"
+  http1.vm.hostname = "http1"
+  http1.vm.network "private_network", bridge: "Swisscom"
+  http1.vm.provision "shell", inline: $script_centos
   end
   
   config.vm.define "bdd1" do |bdd1|
-	bdd1.vm.provider :hyperv do |hyperv|
-	  hyperv.vmname = "bdd1"
-	  hyperv.memory = 2048
+  bdd1.vm.provider :hyperv do |hyperv|
+    hyperv.vmname = "bdd1"
+    hyperv.memory = 2048
     hyperv.cpus = 1
-	end
-	bdd1.vm.box = "centos/7"
-	bdd1.vm.hostname = "bdd1"
-	bdd1.vm.network "private_network", bridge: "Swisscom"
-	bdd1.vm.provision "shell", inline: $script_centos
+  end
+  bdd1.vm.box = "centos/7"
+  bdd1.vm.hostname = "bdd1"
+  bdd1.vm.network "private_network", bridge: "Swisscom"
+  bdd1.vm.provision "shell", inline: $script_centos
   end
 
 end
