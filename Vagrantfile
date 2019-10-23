@@ -8,16 +8,16 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   
-  config.vm.define "node-manager" do |node-manager|
-    node-manager.vm.provider :hyperv do |hyperv|
-      hyperv.vmname = "node-manager"
+  config.vm.define "manager" do |manager|
+    manager.vm.provider :hyperv do |hyperv|
+      hyperv.vmname = "manager"
       hyperv.memory = 2048
       hyperv.cpus = 2
     end
-    node-manager.vm.box = "debian/9"
-    node-manager.vm.hostname = "node-manager"
-    node-manager.vm.network "private_network", bridge: "Swisscom"
-    node-manager.vm.provision "shell", inline: $script_debian
+    manager.vm.box = "debian/9"
+    manager.vm.hostname = "manager"
+    manager.vm.network "private_network", bridge: "Swisscom"
+    manager.vm.provision "shell", inline: $script_debian
   end
   
   config.vm.define "http1" do |http1|
