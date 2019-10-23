@@ -8,17 +8,17 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   
-  #config.vm.define "manager" do |manager|
-    #manager.vm.provider :hyperv do |hyperv|
-      #hyperv.vmname = "manager"
-      #hyperv.memory = 1024
-      #hyperv.cpus = 2
-    #end
-    #manager.vm.box = "generic/debian9"
-    #manager.vm.hostname = "manager"
-    #manager.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.150"
-    #manager.vm.provision "shell", inline: $script_debian
-  #end
+  config.vm.define "manager" do |manager|
+    manager.vm.provider :hyperv do |hyperv|
+      hyperv.vmname = "manager"
+      hyperv.memory = 1024
+      hyperv.cpus = 2
+    end
+    manager.vm.box = "generic/debian9"
+    manager.vm.hostname = "manager"
+    manager.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.150"
+    manager.vm.provision "shell", inline: $script_debian
+  end
   
   config.vm.define "http1" do |http1|
     http1.vm.provider :hyperv do |hyperv|
