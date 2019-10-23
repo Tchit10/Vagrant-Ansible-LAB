@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
       hyperv.memory = 1024
       hyperv.cpus = 1
     end
-    manager.vm.box = "roboxes/debian9"
+    manager.vm.box = "debian/stretch64"
     #manager.vm.box_version = "1.9.34"
     manager.vm.hostname = "manager"
     manager.vm.network "private_network", bridge: "Swisscom", ip: "192.168.1.150"
